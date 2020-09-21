@@ -1,17 +1,25 @@
 import exceptions
+from product import Product
 
-
-# represents shop structure
+# repsresents shop structure
 # list of Product type objects
 items = []
 
 # add item to items
-
 def addItem(name, price, amount):
     global items
-    # create the product with require description
+    # create product with reqiure description
     product = Product(name, price, amount)
+    # control is item already exists
     if product in items:
-        raise exceptions.ItemExists("Item {} exists".format(name))
+        raise exceptions.ItemExists("Item {} is exists".format(name))
     else:
         items.append(product)
+# show items
+def showItems():
+    global items
+    # control if items exists
+    if len(items) == 0:
+        raise exceptions.ItemExists("List of items is empty")
+    else:
+        return items

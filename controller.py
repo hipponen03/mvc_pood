@@ -1,7 +1,4 @@
 import exceptions
-from product import Product
-
-
 class Controller:
     def __init__(self, model, view):
         self.model = model
@@ -10,6 +7,10 @@ class Controller:
     def addItem(self, name, price, amount):
         try:
             self.model.addItem(name, price, amount)
-            print("Timm")
+            print("Ok!")
         except:
-            print("Problem")
+            print("Problem!")
+
+    def showItems(self):
+        items = self.model.showItems()
+        self.view.showItems(items)
