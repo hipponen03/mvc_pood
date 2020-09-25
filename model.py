@@ -10,3 +10,15 @@ class Model:
     # show items
     def showItems(self):
         return helpers.showItems()
+    # show item
+    def showItem(self, name):
+        return helpers.showItem(name)
+    # delete item
+    def deleteItem(self, name):
+        helpers.deleteItem(name)
+    # delete all items
+    def deleteAll(self):
+        helpers.deleteAll()
+    # elemendi uuendamine
+    def updateItem(self, name, price, amount):
+        helpers.updateItem(name, price, amount)
