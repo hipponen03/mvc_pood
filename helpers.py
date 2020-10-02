@@ -41,7 +41,7 @@ def deleteItem(name):
             items.remove(item)
         else:
             continue
-            raise exceptions.ItemExists("Not found {} item.".format(name))
+            raise exceptions.ItemExists("Couldn't find item {}.".format(name))
 # delete all
 def deleteAll():
     global items
