@@ -1,4 +1,4 @@
-
+import stock_helpers
 
 class StockModel:
     # get shop data - [] of products

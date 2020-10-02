@@ -12,15 +12,15 @@ def addItem(name, price, amount):
     if product in stockItems:
         raise exceptions.ItemExists("Item {} is exists".format(name))
     else:
-        items.append(product)
+        stockItems.append(product)
 # show items
 def showItems():
     global stockItems
     # control if items exists
-    if len(items) == 0:
+    if len(stockItems) == 0:
         raise exceptions.ItemExists("There are no items to show.")
     else:
-        return items
+        return stockItems
 # show item
 def showItem(name):
     global stockItems
@@ -35,7 +35,7 @@ def showItem(name):
 # delete ONE item
 def deleteItem(name):
     global stockItems
-    for item in items:
+    for item in stockItems:
         # if the name is the same as we search
         if (item.getName() == name):
             stockItems.remove(item)
