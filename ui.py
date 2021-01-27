@@ -7,7 +7,7 @@ from view import View
 from stock_model import StockModel
 from stock import Stock
 
-# create products
+# create products testt
 bread = Product("bread", 0.80, 10)
 milk = Product("milk", 0.50, 50)
 wine = Product("wine", 5.60, 5)
