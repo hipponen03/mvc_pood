@@ -5,13 +5,6 @@ class Controller:
         self.model = model
         self.view = view
 
-    def addItem(self, name, price, amount):
-        try:
-            self.model.addItem(name, price, amount)
-            print("All went as expected")
-        except:
-            print("Problem!")
-
     def showItems(self):
         try:
             items = self.model.showItems()
@@ -43,7 +36,7 @@ class Controller:
 # elemendi uuendamine
     def updateItem(self, name, price, amount):
         if (price <= 0):
-            print("Price must be higher then 0 EUR")
+            print("Price must be higher than 0 EUR")
         elif (amount <= 0):
             print("Amount must be higher than 0")
         try:

@@ -6,11 +6,9 @@ stockItems = []
 # add item to items
 def addItem(name, price, amount):
     global stockItems
-    # create product with reqiure description
     product = Product(name, price, amount)
-    # control is item already exists
     if product in stockItems:
-        raise exceptions.ItemExists("Item {} is exists".format(name))
+        raise exceptions.ItemExists("Item {} already exists".format(name))
     else:
         stockItems.append(product)
 # show items
@@ -41,7 +39,7 @@ def deleteItem(name):
             stockItems.remove(item)
         else:
             continue
-            raise exceptions.ItemExists("Not found {} item.".format(name))
+            raise exceptions.ItemExists("Did not find item {}.".format(name))
 # delete all
 def deleteAll():
     global stockItems

@@ -21,7 +21,7 @@ def showItem(name):
             return item
         else:
             continue
-            raise exceptions.ItemExists("Not found {} item.".format(name))
+            raise exceptions.ItemExists("Did not find item {}.".format(name))
 # delete ONE item
 def deleteItem(name):
     global items
@@ -46,3 +46,7 @@ def updateItem(name, price, amount):
             amount = item.setAmount(amount)
         else:
             raise exceptions.ItemNotExists("Item {} can't be updated, because it does not exist.".format(name))
+
+def restockItem(name, price, amount):
+    global items
+    items.append(name, price, amount)
