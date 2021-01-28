@@ -49,8 +49,18 @@ def deleteAll():
 def updateItem(name, price, amount):
     global stockItems
     for item in stockItems:
-        if (item.getName() == name):
+        if item.getName() == name:
             price = item.setPrice(price)
             amount = item.setAmount(amount)
         else:
             raise exceptions.ItemNotExists("Item {} can't be updated, because it does not exist.".format(name))
+
+def transferItem(name, amount):
+    global stockItems
+    for item in stockItems:
+        if item.getName() == name:
+            if item.getAmount() == amount:
+                print(item.getAmount())
+                deleteItem(name)
+            else:
+                item.setAmount(item.getAmount() - amount)

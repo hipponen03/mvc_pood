@@ -16,12 +16,10 @@ stock = ControllerStock(StockModel(Stock()), ViewStock())
 stock.addItem("wine", 5.60, 5)
 stock.showItems()
 shop.restockItem("wine", 5.60, 3)
+shop.showItems()
 
-#shop.showItems()
-stock.updateItem("wine", 6.00, 10)
+stock.showItems()
 
-#shop.showItems()
-#stock.showItems()
 
 
 

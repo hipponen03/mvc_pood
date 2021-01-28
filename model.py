@@ -20,6 +20,7 @@ class Model:
     # elemendi uuendamine
     def updateItem(self, name, price, amount):
         helpers.updateItem(name, price, amount)
+
     def restockItem(self, name, price, amount):
         helpers.addItem(name, price, amount)
-        stock_helpers.deleteItem(name)
+        stock_helpers.transferItem(name, amount)
