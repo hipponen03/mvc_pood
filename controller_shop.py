@@ -44,3 +44,5 @@ class Controller:
             self.view.updateItem()
         except:
             self.view.noItemError(name)
+    def restockItem(self, name, price, amount):
+        self.model.restockItem(name, price, amount)

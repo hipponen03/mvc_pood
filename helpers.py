@@ -3,6 +3,15 @@ from product import Product
 
 items = []
 
+# add item to shop
+def addItem(name, price, amount):
+    global items
+    product = Product(name, price, amount)
+    if product in items:
+        raise exceptions.ItemExists("Item {} already exists".format(name))
+    else:
+        items.append(product)
+
 # show items
 def showItems():
     global items
@@ -47,6 +56,3 @@ def updateItem(name, price, amount):
         else:
             raise exceptions.ItemNotExists("Item {} can't be updated, because it does not exist.".format(name))
 
-def restockItem(name, price, amount):
-    global items
-    items.append(name, price, amount)
