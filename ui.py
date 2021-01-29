@@ -14,7 +14,9 @@ shop = Controller(Model(Shop()), View())
 stock = ControllerStock(StockModel(Stock()), ViewStock())
 
 stock.addItem("wine", 5.60, 5)
+stock.addItem("car", 1200, 1)
 stock.showItems()
+shop.restockItem("car", 1200, 1)
 shop.restockItem("wine", 5.60, 3)
 shop.showItems()
 

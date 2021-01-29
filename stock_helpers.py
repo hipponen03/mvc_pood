@@ -1,5 +1,6 @@
 import exceptions
 from product import Product
+import stock_model
 
 stockItems = []
 
@@ -60,7 +61,6 @@ def transferItem(name, amount):
     for item in stockItems:
         if item.getName() == name:
             if item.getAmount() == amount:
-                print(item.getAmount())
                 deleteItem(name)
             else:
                 item.setAmount(item.getAmount() - amount)
